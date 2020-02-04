@@ -1,0 +1,51 @@
+.product-list-wrapper{
+    padding: 15px;
+    justify-content: center;
+}
+img{
+    height: 150px;
+}
+.item-wrapper{
+    padding: 0 25px 25px 25px;
+    margin: 0 7.5px 15px 7.5px;
+    border: 10px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+.item-name{
+    padding: 0 15px;
+    font-size: 16px;
+    font-family: "Roboto Light";
+    font-weight: bold;
+}
+.buy-wrapper{
+    width: 100%;
+    padding: 30px 15px 0 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+}
+.buy-btn{
+    font-size: 14px;
+    font-weight: bold;
+    width: 85px;
+    border-radius: 25px;
+    background-color: rgba(21, 255, 0, 0.71);
+    border: none;
+    color: white;
+    height: 35px;
+}
+.buy-btn:hover{
+    background-color: rgb(19, 222, 0);
+}
+.item-price{
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
+.item-description{
+    padding: 0 15px;
+    font-size: 13px;
+    text-align: justify;
+    float: right;
+}
