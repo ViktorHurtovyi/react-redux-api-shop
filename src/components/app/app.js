@@ -1,10 +1,10 @@
 import React from 'react';
 import './app.css';
-import {ProductList} from "../products";
+import Home from "../pages/home";
 
 const App = ({bookstoreService}) => {
   return <div>
-            <ProductList bookstoreService={ bookstoreService } />
+            <Home bookstoreService={ bookstoreService } />
          </div>;
 };
 
