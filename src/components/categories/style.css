@@ -1,0 +1,14 @@
+.categories-wrapper{
+    margin-top: 15%;
+    margin-left: 5%;
+    position: fixed;
+    text-align: center;
+    border: 10px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+.categories-wrapper ul{
+    list-style-type: none;
+    white-space: nowrap;
+    cursor: pointer;
+}

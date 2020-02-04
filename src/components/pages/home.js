@@ -1,23 +1,25 @@
 import React, {useEffect, useState} from 'react';
-import {withProductStoreService} from '../hoc'
 import {connect} from "react-redux";
 import * as actions from "../../actions";
 import {ProductList} from "../products";
-import Category from "../categories/category";
+import {Category} from "../categories";
 
-const Home = ({bookstoreService}) => {
+const Home = ({products, categories, selectedCategory}) => {
+
     const [AllProducts, changeAllProducts] = useState([]);
     const [AllCategories, changeAllCategories] = useState([]);
     useEffect(() => {
-        bookstoreService.getProducts().then((item) => changeAllProducts(item['data']));
-        bookstoreService.getCategories().then((item) => changeAllCategories(item));
-    }, []);
-
+        products.then((item) => changeAllProducts(item['data'])).catch(() => {});
+        categories.then((item) => changeAllCategories(item)).catch(() => {});
+    });
+    const changeCategory = (id) => {
+        selectedCategory(id)
+    }
     return (
         <div className='container-fluid'>
             <div className="row">
                 <div className="col col-2">
-                   <Category AllCategories={AllCategories} />
+                   <Category AllCategories={AllCategories} changeCategory={changeCategory} />
                 </div>
                 <div className="col col-10">
                     <ProductList AllProducts={AllProducts} />
@@ -32,6 +34,6 @@ const mapStateToProps = (state) => {
         products: state.products,
         categories: state.categories
     }
-}
+};
 
-export default withProductStoreService()(connect(mapStateToProps, actions)(Home));
+export default connect(mapStateToProps, actions)(Home);

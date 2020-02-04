@@ -19,4 +19,38 @@ export default class ProductService {
         return await res.json();
     };
 
+    selectCategories = async (id) => {
+        const res = await fetch(`http://127.0.0.1:8000/api/category/${id}`);
+
+        if (!res.ok) {
+            throw new Error(`Could not fetch` +
+                `, received ${res.status}`)
+        }
+        return await res.json();
+    };
+
+    createCategory = async (name) => {
+        const response = await fetch('http://127.0.0.1:8000/api/categories', {
+            method: 'POST', // или 'PUT'
+            body: JSON.stringify({'name':name}), // данные могут быть 'строкой' или {объектом}!
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const json = await response.json();
+        console.log('Успех:', JSON.stringify(json));
+    };
+
+    createProduct = async (obj) => {
+        const response = await fetch('http://127.0.0.1:8000/api/products', {
+            method: 'POST', // или 'PUT'
+            body: JSON.stringify(obj), // данные могут быть 'строкой' или {объектом}!
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const json = await response.json();
+        console.log('Успех:', JSON.stringify(json));
+    }
+
 }

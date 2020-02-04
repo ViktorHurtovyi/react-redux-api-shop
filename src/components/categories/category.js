@@ -1,13 +1,16 @@
 import React from 'react';
+import './style.css'
 
-const Category = ({ AllCategories }) => {
+const Category = ({ AllCategories, changeCategory }) => {
     return (
-        <div>
+        <div className='row categories-wrapper'>
+            <div className="offset-1 col col-10">
+                <ul className=''>
             {AllCategories.map((category) =>
-            <ul>
-                <li>{category.name}</li>
-            </ul>
+                <li key={category.id} onClick={()=>{changeCategory(category.id)}}>{category.name}</li>
             )}
+                </ul>
+            </div>
         </div>
     );
 };

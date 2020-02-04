@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const Product = ({item: {id, name, price, discount_price, short_description, long_description, image}}) => {
 
@@ -9,7 +10,7 @@ const Product = ({item: {id, name, price, discount_price, short_description, lon
                     <img className='offset-2 col-8' src={image} alt={name}/>
                 </div>
                 <div>
-                    <div className='item-name'>{name}</div>
+                    <div className='item-name'><Link to='/product/'> {name} </Link></div>
                     <div
                         className='col-col-6 item-description'>{short_description.length > 70 ? short_description.slice(0, 70) + '...' : short_description}</div>
                 </div>

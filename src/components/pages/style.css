@@ -1,0 +1,4 @@
+.form-wrapper input, select{
+    float: right;
+    width: 50%;
+}

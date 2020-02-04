@@ -13,6 +13,10 @@ const reducer = (state = initialState, action) => {
             return {...state,
                 categories: action.payload
             };
+        case "CATEGORIES_SELECT":
+            return {...state,
+                products: action.payload
+            };
         default:
             return state;
     }
