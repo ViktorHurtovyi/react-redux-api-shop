@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import * as actions from "../../actions";
 import './style.css'
 
-const CreateProduct = ({categories, createProduct, history}) => {
+const AddProduct = ({categories, createProduct, history}) => {
 
     const [name, changeName] = useState('');
     const [price, changePrice] = useState(0);
@@ -12,7 +12,6 @@ const CreateProduct = ({categories, createProduct, history}) => {
     const [long_description, changelongDescription] = useState('');
     const [image, changeimage] = useState('');
     const [category_id, changecategoryId] = useState(0);
-
 
     const [AllCategories, changeAllCategories] = useState([]);
 
@@ -85,4 +84,4 @@ const mapStateToProps = (state) => {
         categories: state.categories
     }
 };
-export default connect(mapStateToProps, actions)(CreateProduct);
+export default connect(mapStateToProps, actions)(AddProduct);
