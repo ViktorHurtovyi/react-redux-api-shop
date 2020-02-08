@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import * as actions from "../../actions";
 import './style.css'
 
-const AddProduct = ({categories, createProduct, history}) => {
+const AddProduct = ({categories, prepareCreateProduct, history}) => {
 
     const [name, changeName] = useState('');
     const [price, changePrice] = useState(0);
@@ -16,12 +16,11 @@ const AddProduct = ({categories, createProduct, history}) => {
     const [AllCategories, changeAllCategories] = useState([]);
 
     useEffect(() => {
-        categories.then((item) => changeAllCategories(item)).catch(() => {
-        });
+        changeAllCategories(categories);
     });
 
     const addProduct = () => {
-        createProduct({
+        prepareCreateProduct({
             name, price, discount_price, short_description, long_description,
             image, category_id
         });

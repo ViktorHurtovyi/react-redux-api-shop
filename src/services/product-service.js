@@ -50,7 +50,12 @@ export default class ProductService {
             }
         });
         const json = await response.json();
-        console.log('Успех:', JSON.stringify(json));
+    }
+
+    deleteCategory = async (id) => {
+        await fetch(`http://127.0.0.1:8000/api/category/${id}`, {
+            method: 'DELETE', // или 'PUT'
+        });
     }
 
 }

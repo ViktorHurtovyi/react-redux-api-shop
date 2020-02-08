@@ -1,6 +1,8 @@
 const initialState = {
     products: [],
     categories: [],
+    loading: false,
+    error: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -8,6 +10,14 @@ const reducer = (state = initialState, action) => {
         case "PRODUCTS_LOADED":
             return {...state,
                 products: action.payload
+            };
+        case "ADD_TODO_STARTED":
+            return {...state,
+                loading: true,
+            };
+        case "ADD_TODO_END":
+            return {...state,
+                loading: false,
             };
         case "CATEGORIES_LOADED":
             return {...state,
@@ -17,6 +27,8 @@ const reducer = (state = initialState, action) => {
             return {...state,
                 products: action.payload
             };
+        case "CATEGORY_DELETE":
+            return state;
         default:
             return state;
     }

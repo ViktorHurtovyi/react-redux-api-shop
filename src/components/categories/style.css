@@ -1,5 +1,5 @@
 .categories-wrapper{
-    margin-top: 15%;
+    margin-top: 10%;
     margin-left: 5%;
     position: fixed;
     text-align: center;
@@ -11,4 +11,8 @@
     list-style-type: none;
     white-space: nowrap;
     cursor: pointer;
+    padding: 0 10px 0;
+    text-decoration: underline;
+    color: #787878;
+    
 }

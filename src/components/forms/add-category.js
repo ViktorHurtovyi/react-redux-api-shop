@@ -2,12 +2,11 @@ import React, {useState} from 'react';
 import {connect} from "react-redux";
 import * as actions from "../../actions";
 
-const AddCategory = ({createCategory, history}) => {
 
+const AddCategory = ({prepareCreateCategory, history}) => {
     const [name, changeName] = useState('');
-
     const addCategory = () => {
-        createCategory(name);
+        prepareCreateCategory(name);
         return history.push('/');
     };
     return (
@@ -26,4 +25,4 @@ const AddCategory = ({createCategory, history}) => {
     );
 };
 
-export default connect(() => {}, actions)(AddCategory);
+export default connect(null, actions)(AddCategory);
